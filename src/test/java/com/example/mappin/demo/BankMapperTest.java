@@ -36,6 +36,16 @@ public class BankMapperTest {
         log.info("****************Should return bankBean class converted from BankDTO ****************");
         log.info("DATA: " + BankBean.class.getSimpleName().toString() + " " + bankBean.toString());
 
+
+        bankBean = mapper.mapFieldsTransformation(bankDTO);
+
+        log.info("LA CONSTANTE ES: " + bankBean.getHaveToBeConstant());
+
+        /**
+         * Transform data with we own method
+         */
+        log.info("PRUEBA CON NAMED: " + mapper.mapWithNamedExample(bankDTO));
+
         Assertions.assertThat(bankBean.getAddres()).isEqualTo(bankDTO.getAddres());
         Assertions.assertThat(bankBean.getName()).isEqualTo(bankDTO.getName());
         Assertions.assertThat(bankBean.getNit()).isEqualTo(bankDTO.getNit());

@@ -16,5 +16,6 @@ public class BankBean {
     private String addres;
     private Integer telephone;
     private Integer nit;
+    private String haveToBeConstant;
 
 }
